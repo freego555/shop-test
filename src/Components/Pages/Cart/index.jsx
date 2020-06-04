@@ -1,6 +1,7 @@
 import React from 'react'
-import {Card} from './Blocks/Card'
-import {DivContent} from 'styles'
+import {
+  DivContent
+} from 'styles'
 
 const data = [
   {
@@ -23,20 +24,10 @@ const data = [
   }
 ]
 
-export const Home = () => {
-  const renderCards = () => {
-    return data.map(el => {
-      return (
-        <Card item={el}/>
-      )
-    })
-  }
-
+export const Cart = () => {
   return (
     <DivContent>
-      {
-        renderCards()
-      }
+      Cart products
     </DivContent>
   )
 }

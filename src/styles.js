@@ -5,7 +5,7 @@ const { Header, Footer, Content } = Layout
 
 export const DivContent = styled.div`
   padding: 0px 24px 24px 24px;
-  min-height: 380px;
+  min-height: 720px;
   background: #fff;
 `
 
