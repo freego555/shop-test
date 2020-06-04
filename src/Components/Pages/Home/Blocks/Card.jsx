@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import { Card as AntdCard} from 'antd';
-import ReactCardFlip from "react-card-flip";
+import {CardWrapper} from 'styles'
+import ReactCardFlip from 'react-card-flip';
 
-const { Meta } = AntdCard;
+const { Meta } = CardWrapper;
 
 export const Card = ({item, ...rest}) => {
   const [isFlipped, changeFlipped] = useState(false)
@@ -11,24 +11,22 @@ export const Card = ({item, ...rest}) => {
   }
 
   return (
-    <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-      <AntdCard
+    <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical" containerStyle={{padding: '24px 0px 0px 0px'}}>
+      <CardWrapper
         hoverable
-        style={{width: 240}}
         cover={<img alt="example" src={item.image}/>}
         onClick={clickCard}
       >
         <Meta title={item.name}/>
-      </AntdCard>
+      </CardWrapper>
 
-      <AntdCard
+      <CardWrapper
         hoverable
-        style={{width: 240}}
         cover={<img alt="example" src={item.image}/>}
         onClick={clickCard}
       >
         <Meta title={item.price}/>
-      </AntdCard>
+      </CardWrapper>
     </ReactCardFlip>
   )
 }
